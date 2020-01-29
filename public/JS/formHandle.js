@@ -4,7 +4,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
     if(!location) {
         console.log('Please provide location to Us')
     }else{
-        fetch('http://localhost:3000/weather?address='+ location).then((response) => {
+        fetch('/weather?address='+ location).then((response) => {
             response.json().then((data) => {
                 if(data.error) {
                     document.querySelector('#message-2').textContent = 'Forecast: ' + data.error

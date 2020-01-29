@@ -2,11 +2,12 @@ const env = require('dotenv').config({path: __dirname + '/.env'})
 const hbs = require('hbs')
 const path = require('path')
 const express = require('express')
-const geoCod = require('./utils/geoCode')
+const geoCode = require('./utils/geoCode')
 
 const weatherForecast = new geoCode();
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const partialPath = path.join(__dirname, '../templates/partials')
 
@@ -80,6 +81,6 @@ app.get('*',(req,res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("App is running on Port: 3000")
 })
