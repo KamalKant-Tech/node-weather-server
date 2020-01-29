@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    {{>header}}
+        <div class="container"><p> {{ body }} </p>
+            <span>Use this site get your weather !</span>
+            <form>
+                <input type="text" placeholder="Location">
+                <button type="submit"> Send </button>
+            </form>
+
+            <span id="message-1"></span>
+            <span id="message-2"></span>
+        </div>
+    {{>footer}} 
+    <script src="./js/formHandle.js"></script>
+</body>
+</html>
