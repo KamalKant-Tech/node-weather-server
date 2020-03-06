@@ -8,7 +8,7 @@ Use the npm package manager to install.
 ```bash
 npm install
 ```
-Create .env file and add following details into it.
+Create src/.env file and add following details into it.
 
 ```bash 
 AWS_ACCESS_KEY='**********'
