@@ -15,7 +15,7 @@
   ],
   "author": "Kamal Kant",
   "license": "ISC",
-  "dependencies": { //add for github repo
+  "dependencies": {
     "aws-sdk": "^2.625.0",
     "bcryptjs": "^2.4.3",
     "bottleneck": "^2.19.5",
