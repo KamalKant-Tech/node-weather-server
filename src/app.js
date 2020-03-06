@@ -3,7 +3,14 @@ const hbs = require('hbs')
 const path = require('path')
 const express = require('express')
 const geoCode = require('./utils/geoCode')
-
+const userRouters = require('./routers/user')
+var dbConfig = require('../db.json');
+var db = require('./utils/dbInstance');
+const checkIfTopicExists = require('./utils/checkIfTopicExists');
+const topic = new checkIfTopicExists()
+const createTopic = require('./utils/createTopic');
+//const publishToTopic = require('./publishToTopic');
+let database = new db(dbConfig);
 const weatherForecast = new geoCode();
 
 const app = express()
@@ -16,13 +23,31 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname,'../templates/views'))
 hbs.registerPartials(partialPath)
 
+/* //Express middleware for API call
+app.use((req,res,next) =>{
+    next()
+}) */
+
 //Setup static directory to serve
 app.use(express.static(path.join(__dirname,'../public')))
 
-app.get('', (req,res) =>  {
+//Parse incoming request data into json
+app.use(express.json())
+
+//app router inside our application / Registered router
+app.use(userRouters)
+
+
+app.get('', async (req,res) =>  {
+    /* topic.checkTopicExist('testSNSTopic').then((result) => {
+        console.log("Result: ", result)
+    }).catch((err) => {
+        console.log(err)
+    }) */
+    //const ifTopicExists = await checkIfTopicExists(AWS, 'ON_POST_CREATED');
     res.render('index',{
         title: 'Weather App Server',
-        body: "This is Dynamic web page."
+        body: {content1: "This is Dynamic web page.", content2: "This is content 2 paragraph", content3: "This is content 3 paragraph."}
     })
 })
 
@@ -33,7 +58,7 @@ app.get('/about' , (req,res) => {
     })
 })
 
-app.get('/weather' , (req,res) => {
+app.get('/weather' , async (req,res) => {
     if(!req.query.address) {
         return res.send({
             error: 'Error: Please specify address string into url.'
@@ -52,11 +77,11 @@ app.get('/weather' , (req,res) => {
 
             res.send({
                 forecast: data.summary,
+                location: location
             })
         })
         
     })
-    
 })
 
 app.get('/help' , (req,res) => {
@@ -67,8 +92,14 @@ app.get('/help' , (req,res) => {
 })
 
 app.get('/products' , (req,res) => {
-    console.log(req.query)
     res.render('help',{
+        title: 'Help App Server',
+        body: "This is Dynamic web page."
+    })
+})
+
+app.get('/login', (req, res) => {
+    res.render('login', {
         title: 'Help App Server',
         body: "This is Dynamic web page."
     })

@@ -15,8 +15,22 @@
   ],
   "author": "Kamal Kant",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": { //add for github repo
+    "aws-sdk": "^2.625.0",
+    "bcryptjs": "^2.4.3",
+    "bottleneck": "^2.19.5",
+    "chalk": "^3.0.0",
+    "child_process": "^1.0.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "hbs": "^4.1.0"
+    "faker": "^4.1.0",
+    "hbs": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "util": "^0.12.1",
+    "validator": "^12.1.0",
+    "yargs": "^15.1.0"
   }
 }

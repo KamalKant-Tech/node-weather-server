@@ -29,6 +29,13 @@
         padding: 7px 25px;
         display: inline-block;
     }
-    .container p{
-        line-height: 200px; /* Create scrollbar to test positioning */
+
+    .container > p {
+        display:inline-block;
+        height: 100px;
+        width: 33%;
+        background: green;
+        color: white;
+        text-align: center;
     }
+
