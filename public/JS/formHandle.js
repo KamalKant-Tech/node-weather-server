@@ -1,3 +1,4 @@
+
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
     var location = document.querySelector('input').value
