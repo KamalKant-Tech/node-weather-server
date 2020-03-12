@@ -14,7 +14,7 @@
     "Js"
   ],
   "author": "Nishant Rana",
-  "license": "FREE",
+  "license": "FREE LIC",
   "dependencies": {
     "aws-sdk": "^2.625.0",
     "bcryptjs": "^2.4.3",
