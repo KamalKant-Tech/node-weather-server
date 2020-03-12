@@ -13,7 +13,7 @@
     "Node",
     "Js"
   ],
-  "author": "Kamal Kant",
+  "author": "Nishant Rana",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.625.0",
