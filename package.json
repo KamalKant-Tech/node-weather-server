@@ -16,7 +16,7 @@
   "author": "Kamal Kant",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.625.0",
+    "aws-sdk": "^2.1390.0",
     "bcryptjs": "^2.4.3",
     "bottleneck": "^2.19.5",
     "chalk": "^3.0.0",
