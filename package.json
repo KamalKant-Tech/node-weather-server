@@ -13,8 +13,8 @@
     "Node",
     "Js"
   ],
-  "author": "Kamal Kant",
-  "license": "ISC",
+  "author": "Nishant Rana",
+  "license": "FREE LIC",
   "dependencies": {
     "aws-sdk": "^2.625.0",
     "bcryptjs": "^2.4.3",
